@@ -13,16 +13,14 @@ if (empty($_SERVER['PHP_AUTH_DIGEST']) || !($data = http_digest_parse($_SERVER['
     die('Text to send if user hits Cancel button');
 }
 
-echo 'You are logged in as: ' . $data['username'];
+echo 'You are logged in as: ' . '<b>'. $data['username'] . "<b/>"." \n";
 
 // generate the valid response
 $A1 = md5($data['username'] . ':' . $realm . ':' . $users[$data['username']]);
 $A2 = md5($_SERVER['REQUEST_METHOD'] . ':' . $data['uri']);
 $valid_response = md5($A1 . ':' . $data['nonce'] . ':' . $data['nc'] . ':' . $data['cnonce'] . ':' . $data['qop'] . ':' . $A2);
 
-if ($data['response'] != $valid_response)
-    die("Wrong Credentials!");
-// ok, valid username & password
+
 
 
 
@@ -89,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Wrong API Key provided.";
     }
 } else {
-    echo "No data posted with HTTP POST.";
+    echo " \n No data CURRENTLY posted with HTTP POST.";
 }
 
 function test_input($data)
