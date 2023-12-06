@@ -3,7 +3,7 @@ $realm = 'Restricted area';
 
 //user => password
 $users = array('sysadmin' => 'ADMINPASS', 'guest' => 'GUESTPASS');
-
+header('Refresh: 50; url=main.php');
 
 if (empty($_SERVER['PHP_AUTH_DIGEST']) || !($data = http_digest_parse($_SERVER['PHP_AUTH_DIGEST'])) ||  !isset($users[$data['username']])) {
     header('HTTP/1.1 401 Unauthorized');
