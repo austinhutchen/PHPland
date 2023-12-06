@@ -1,9 +1,9 @@
+<!DOCTYPE html> 
+<div class="php">
 <?php
 $realm = 'Restricted area';
-
 //user => password
 $users = array('sysadmin' => 'ADMINPASS', 'guest' => 'GUESTPASS');
-header('Refresh: 50; url=main.php');
 
 if (empty($_SERVER['PHP_AUTH_DIGEST']) || !($data = http_digest_parse($_SERVER['PHP_AUTH_DIGEST'])) ||  !isset($users[$data['username']])) {
     header('HTTP/1.1 401 Unauthorized');
@@ -13,8 +13,7 @@ if (empty($_SERVER['PHP_AUTH_DIGEST']) || !($data = http_digest_parse($_SERVER['
     die('Text to send if user hits Cancel button');
 }
 
-echo 'You are logged in as: ' . '<b>'. $data['username'] . "<b/>"." \n";
-
+ echo "<h3 style='color:green;'>You are currently logged in as: "  . '<b>'. $data['username'] . "<b/></h3>";
 // generate the valid response
 $A1 = md5($data['username'] . ':' . $realm . ':' . $users[$data['username']]);
 $A2 = md5($_SERVER['REQUEST_METHOD'] . ':' . $data['uri']);
@@ -87,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Wrong API Key provided.";
     }
 } else {
-    echo " \n No data CURRENTLY posted with HTTP POST.";
+    echo "<hr/> <h4 style='color:red;'> " . "NO DATA is currently being posted to MCU with HTTP POST."."</h4>";
 }
 
 function test_input($data)
@@ -97,3 +96,11 @@ function test_input($data)
     $data = htmlspecialchars($data);
     return $data;
 }
+?>
+</div>
+<html style="background-color: #142d4c">
+<div class ="static">
+<iframe width="350svh" height="350svh" src="./images/SOLDER.mp4">
+
+</div>
+</html>
