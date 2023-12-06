@@ -1,6 +1,6 @@
 # PHPland
 <b>
-a collection of PHP-based server scripting projects.
+A collection of my PHP-based server scripting projects.
 <ul>
  <h3> Included is: </h3> 
 <li>
