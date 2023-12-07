@@ -1,6 +1,8 @@
 <!DOCTYPE html> 
 <div class="php">
 <?php
+require __DIR__ . '/GET_POST.php';
+
 $realm = 'Restricted area';
 //user => password
 $users = array('sysadmin' => 'ADMINPASS', 'guest' => 'GUESTPASS');
