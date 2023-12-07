@@ -100,7 +100,7 @@ function test_input($data)
 </div>
 <html style="background-color: #142d4c">
 <div class ="static">
-<iframe width="350svh" height="350svh" src="./images/SOLDER.mp4">
+<iframe width="100%" height="350svh" src="./images/SOLDER.mp4">
 
 </div>
 </html>
